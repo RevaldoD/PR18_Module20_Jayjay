@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PR18_Module20">
+    <test name="Test Get and Post">
+        <classes>
+            <class name="testing.TestApi"/>
+        </classes>
+    </test>
+</suite>
