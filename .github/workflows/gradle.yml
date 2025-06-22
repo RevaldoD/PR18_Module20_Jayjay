@@ -1,4 +1,5 @@
 name: API Automation Workflow
+
 on:
   push:
     branches: [ "master" ]
@@ -10,6 +11,8 @@ permissions:
   id-token: write
 
 jobs:
+  api-test:
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -20,11 +23,18 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Grant Gradle executable permissions
+        run: chmod +x gradlew
 
+      - name: Build
+        run: ./gradlew build
 
+      - name: Run API tests
         run: ./gradlew clean test
 
       - name: Archive test results
         uses: actions/upload-artifact@v4.6.2
         if: always()
         with:
+          name: API Test Results
+          path: build/test-results
