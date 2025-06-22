@@ -38,11 +38,11 @@ jobs:
           ./gradlew build # Run the build task before tests
 
       # Run tests
-      - name: Run Tests
-        run: ./gradlew clean test
+      - name: Run Cucumber report & Tests
+        run: ./gradlew clean cucumberHtmlReport test
 
-      - name: Debug reports folder
-        run: ls -R build/reports
+#      - name: Debug reports folder
+#        run: ls -R build/reports
 
       # Archive test results (pastikan folder ini sesuai output test Anda)
       - name: Archive API Cucumber Reports
@@ -50,7 +50,7 @@ jobs:
         if: always()
         with:
           name: API Cucumber Report
-          path: reports/api-cucumber-report.html
+          path: reports/api-cucumber-report/
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages

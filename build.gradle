@@ -29,3 +29,18 @@ test {
         events "PASSED", "FAILED", "SKIPPED"
     }
 }
+
+// Cucumber HTML report generator task
+task cucumberHtmlReport(type: JavaExec) {
+    group = 'verification'
+    description = 'Generate Cucumber HTML report'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass.set('io.cucumber.core.cli.Main')
+    args = [
+            '--plugin', 'html:reports/api-cucumber-report',
+            '--glue', 'testing',
+            'src/test/resources'
+    ]
+}
+
+check.dependsOn cucumberHtmlReport
