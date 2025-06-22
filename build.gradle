@@ -16,6 +16,8 @@ dependencies {
     testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.5.1'
     testImplementation group: 'org.json', name: 'json', version: '20250107'
     testImplementation group: 'io.rest-assured', name: 'json-schema-validator', version: '5.5.1'
+    testImplementation 'io.cucumber:cucumber-java:7.15.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.15.0'
 }
 
 test {
