@@ -10,11 +10,9 @@ import org.junit.runner.RunWith;
         glue     = "testing",
         plugin   = {
                 "pretty",
-                "html:build/reports/cucumber-html-report"
+                "html:reports/api-cucumber-report.html"
         },
         monochrome = true
 )
+public class CucumberTest { }
 
-public class CucumberTest {
-
-}

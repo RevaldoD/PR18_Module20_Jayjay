@@ -45,13 +45,12 @@ jobs:
         run: ls -R build/reports
 
       # Archive test results (pastikan folder ini sesuai output test Anda)
-      - name: Archive test results
+      - name: Archive API Cucumber Reports
         uses: actions/upload-artifact@v4.6.2
-        if: always() # bisa diganti dengan success(), failed(), canceled(); tergantung kebutuhan tests
+        if: always()
         with:
-          name: API Cucumber Reports
-#          path: reports/test-report.html
-          path: build/reports/cucumber-html-report/index.html
+          name: API Cucumber Report
+          path: reports/api-cucumber-report.html
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
