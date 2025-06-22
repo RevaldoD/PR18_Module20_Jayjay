@@ -6,11 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features   = "src/test/resources",
-        glue       = "testing",                          // ← here
-        plugin     = {
+        features = "src/test/resources",
+        glue     = "testing",
+        plugin   = {
                 "pretty",
-                "html:reports/test-report.html"
+                "html:build/reports/cucumber-html-report"
         },
         monochrome = true
 )
