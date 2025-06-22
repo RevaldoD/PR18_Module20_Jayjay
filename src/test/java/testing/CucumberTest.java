@@ -6,10 +6,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        glue = {"com.valdo"},
-        features = {"src/test/resources"},
-        plugin = {"pretty","html:target/cucumber-reports.html"},
-        tags = "not @exclude"
+        features   = "src/test/resources",
+        glue       = "testing",                          // ← here
+        plugin     = {
+                "pretty",
+                "html:build/reports/cucumber-html-report"
+        },
+        monochrome = true
 )
 
 public class CucumberTest {

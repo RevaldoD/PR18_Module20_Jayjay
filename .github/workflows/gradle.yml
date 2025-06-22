@@ -1,4 +1,4 @@
-name: Web Automation Workflow
+name: API Automation Workflow
 on:
   push:
     branches: [ "master" ]
@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v4.6.2
         if: always() # bisa diganti dengan success(), failed(), canceled(); tergantung kebutuhan tests
         with:
-          name: Web UI Cucumber Reports
+          name: API Cucumber Reports
           path: reports/test-report.html
 
       # Deploy to GitHub Pages
